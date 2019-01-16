@@ -5,21 +5,26 @@
 </head>
 <body>
 <form action="" method="POST">
-		Masukkan angka <input type="text" name="angka"><input type="submit" name="submit" value="submit">
+		Masukkan angka <input type="text" name="ganjil"><input type="submit" name="submit" value="submit">
 </form>
 </body>
 </html>
 
 <?php 
 if(isset($_POST['submit'])){
-	$bin = $_POST['angka'];
+	$bin = $_POST['ganjil'];
 
-	for($b=1; $b <= $bin; $b++){
-		for($y = 1; $y <= $b; $y++){
-			echo "*";
-		}
-		echo "<br>";
-	}
+	if($bin % 2 && $bin > 3 && $bin < 50){
+	for ($i=1; $i<=$bin; $i++){
+	echo "<center>";
+	for ($d=$i; $d<= $bin; $d++) {
+	echo "*";	
+}
+	 echo "<br>";
+}
+}else{
+	echo "angka harus ganjil dan lebih besar dari 3 tetapi kurang dari 50";
+}
 }
  ?>
 
